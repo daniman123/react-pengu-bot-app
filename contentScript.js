@@ -5,7 +5,7 @@ const injectApp = () => {
 
 	const script = document.createElement("script");
 	// eslint-disable-next-line no-undef
-	script.src = chrome.runtime.getURL("build/static/js/main.0b2124c5.js"); // Adjust the path as per your build files
+	script.src = chrome.runtime.getURL("build/static/js/main.56bf9997.js"); // Adjust the path as per your build files
 	script.onload = () => script.remove();
 	(document.head || document.documentElement).appendChild(script);
 };
@@ -19,6 +19,6 @@ const loadCSS = (href) => {
 	document.head.appendChild(link);
 };
 
-loadCSS("build/static/css/main.de24fe38.css"); // Update the path based on your build output
+loadCSS("build/static/css/main.a3a6efa3.css"); // Update the path based on your build output
 
 injectApp();
