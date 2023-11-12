@@ -1,0 +1,1 @@
+./templateCreator/release/rusty <main_dir_name> <base_dir_name> <base_template>
