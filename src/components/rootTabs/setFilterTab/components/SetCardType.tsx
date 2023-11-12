@@ -14,9 +14,9 @@ export const SearcBar = () => {
 
 export const CardDropdown = () => {
 	return (
-		<div className=" col-span-2 row-span-1 gap-1 grid auto-cols-fr grid-flow-col mb-1">
-			<div className="bg-white">y</div>
-			<div className="bg-slate-400">ds</div>
+		<div className="col-span-2 row-span-1 gap-1 grid auto-cols-fr grid-flow-col mb-1 ">
+			<select name="" id="" className="h-full w-full outline-none rounded-sm"></select>
+			<select name="" id="" className="h-full w-full outline-none rounded-sm"></select>
 		</div>
 	);
 };
