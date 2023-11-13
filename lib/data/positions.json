@@ -1,0 +1,79 @@
+{
+  "positions": [
+    {
+      "id": 14,
+      "label": "Center Midfielder",
+      "shortLabel": "CM"
+    },
+    {
+      "id": 5,
+      "label": "Center Back",
+      "shortLabel": "CB"
+    },
+    {
+      "id": 2,
+      "label": "Right Wing Back",
+      "shortLabel": "RWB"
+    },
+    {
+      "id": 23,
+      "label": "Right Wing",
+      "shortLabel": "RW"
+    },
+    {
+      "id": 10,
+      "label": "Center Defensive Midfielder",
+      "shortLabel": "CDM"
+    },
+    {
+      "id": 7,
+      "label": "Left Back",
+      "shortLabel": "LB"
+    },
+    {
+      "id": 8,
+      "label": "Left Wing Back",
+      "shortLabel": "LWB"
+    },
+    {
+      "id": 3,
+      "label": "Right Back",
+      "shortLabel": "RB"
+    },
+    {
+      "id": 18,
+      "label": "Center Attacking Midfielder",
+      "shortLabel": "CAM"
+    },
+    {
+      "id": 27,
+      "label": "Left Wing",
+      "shortLabel": "LW"
+    },
+    {
+      "id": 16,
+      "label": "Left Midfielder",
+      "shortLabel": "LM"
+    },
+    {
+      "id": 0,
+      "label": "Goalkeeper",
+      "shortLabel": "GK"
+    },
+    {
+      "id": 21,
+      "label": "Center Forward",
+      "shortLabel": "CF"
+    },
+    {
+      "id": 25,
+      "label": "Striker",
+      "shortLabel": "ST"
+    },
+    {
+      "id": 12,
+      "label": "Right Midfielder",
+      "shortLabel": "RM"
+    }
+  ]
+}

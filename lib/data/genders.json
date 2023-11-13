@@ -1,0 +1,12 @@
+{
+  "gender": [
+    {
+      "id": 0,
+      "label": "Men's Football"
+    },
+    {
+      "id": 1,
+      "label": "Women's Football"
+    }
+  ]
+}
