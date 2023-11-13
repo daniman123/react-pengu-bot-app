@@ -9,7 +9,7 @@ export const PriceInputField = ({
 		<div className="relative flex justify-center">
 			<button
 				className="w-[15%] text-xl bg-slate-500 font-bold px-3 rounded-l"
-				onClick={() => onChange(value - 1)} // Using onChange
+				onClick={() => onChange(value - 1)}
 			>
 				-
 			</button>
@@ -19,12 +19,12 @@ export const PriceInputField = ({
 			<input
 				className="w-[60%] pt-1 indent-3 outline-none font-semibold text-lg"
 				type="number"
-				value={value} // Controlled component
-				onChange={(e) => onChange(Number(e.target.value))} // Using onChange
+				value={value}
+				onChange={(e) => onChange(Number(e.target.value))}
 			/>
 			<button
 				className="w-[15%] text-xl bg-slate-500 font-bold px-3 rounded-r"
-				onClick={() => onChange(value + 1)} // Using onChange
+				onClick={() => onChange(value + 1)}
 			>
 				+
 			</button>

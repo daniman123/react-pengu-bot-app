@@ -2,31 +2,23 @@ import { useEffect, useState } from "react";
 import BotRuntime from "./components/BotRuntime";
 import SetCardType from "./components/cardTypes/SetCardType";
 import SetPriceRanges from "./components/priceRanges/SetPriceRanges";
-
-export const FilterListElement = ({
-	value,
-	setSearchFilters,
-}: {
-	value: string;
-	setSearchFilters: React.Dispatch<React.SetStateAction<never[]>>;
-}) => {
-	return (
-		<li
-			className="cursor-pointer opacity-80 hover:opacity-100 border rounded-md p-5"
-			onClick={(e) =>
-				setSearchFilters(
-					(prev) => (prev = prev.filter((item) => item !== e.target.innerHTML))
-				)
-			}
-		>
-			{value}
-		</li>
-	);
-};
+import { FilterListElement } from "./components/FilterListElement";
+import FilterControlPanel from "./components/filterControlPanel/FilterControlPanel";
+import { FilterData } from "./types";
 
 const SetFilterTab = () => {
-	const [filterData, setFilterData] = useState({});
-	const [filters, setSearchFilters] = useState([]);
+	const [filterData, setFilterData] = useState<FilterData>({
+		cardTypes: {
+			rarity: "",
+			gender: "",
+			league: "",
+			nationality: "",
+			position: "",
+			team: "",
+		},
+		priceRange: { max: 0, min: 0 },
+	});
+	const [filters, setSearchFilters] = useState<string[]>([]);
 
 	useEffect(() => {
 		console.log(filterData);
@@ -35,12 +27,6 @@ const SetFilterTab = () => {
 	useEffect(() => {
 		console.log(filters);
 	}, [filters]);
-
-	const handleAddFilter = () => {
-		setSearchFilters((prev) => [
-			...new Set([...prev, filterData["cardTypes"]["rarity"]]),
-		]);
-	};
 
 	return (
 		<div className="h-full w-full grid auto-cols-fr grid-flow-col gap-4">
@@ -54,10 +40,10 @@ const SetFilterTab = () => {
 				</div>
 			</div>
 			<div className="bg-white max-h-full overflow-y-auto ">
-				<div className="flex gap-3">
-					<button onClick={handleAddFilter}>Add</button>
-					<button>Exclude</button>
-				</div>
+				<FilterControlPanel
+					setSearchFilters={setSearchFilters}
+					filterData={filterData}
+				/>
 
 				<div className="max-w-full p-4">
 					<h4>Current Filters</h4>

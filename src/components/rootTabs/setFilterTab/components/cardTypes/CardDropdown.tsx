@@ -1,3 +1,5 @@
+import { CardTypes } from "../../types";
+
 export const CardDropdown = ({
 	jsonData,
 	columnName,
@@ -9,29 +11,11 @@ export const CardDropdown = ({
 	columnName: string;
 	defaultOptionLabel: string;
 	updatePriceRange: (
-		setCardTypes: React.Dispatch<
-			React.SetStateAction<{
-				gender: null;
-				position: null;
-				rarity: null;
-				team: null;
-				nationality: null;
-				league: null;
-			}>
-		>,
+		setCardTypes: React.Dispatch<React.SetStateAction<CardTypes>>,
 		key: string,
 		value: any
 	) => void;
-	setCardTypes: React.Dispatch<
-		React.SetStateAction<{
-			gender: null;
-			position: null;
-			rarity: null;
-			team: null;
-			nationality: null;
-			league: null;
-		}>
-	>;
+	setCardTypes: React.Dispatch<React.SetStateAction<CardTypes>>;
 }) => {
 	const handleChange = (key: string, value: string) => {
 		updatePriceRange(setCardTypes, key, value);
