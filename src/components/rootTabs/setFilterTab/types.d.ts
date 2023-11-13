@@ -1,7 +1,7 @@
 export interface IPriceInputField {
 	inputLabel: string;
-	valueRef: Dispatch<SetStateAction<number | undefined>>;
-	mainVal: number | undefined;
+	onChange: (key: string, value: any) => void;
+	value: number | undefined;
 }
 
 export interface IPriceInputFieldRanges {
