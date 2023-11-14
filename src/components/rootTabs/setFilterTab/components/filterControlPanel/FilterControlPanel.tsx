@@ -1,18 +1,14 @@
 import React from "react";
-import { handleAddFilter } from "../../utils";
 import { IFilterControlPanel } from "../../types";
 
 const FilterControlPanel = ({
-	setSearchFilters,
-	filterData,
+	onAddClick,
+	buttonText,
 }: IFilterControlPanel) => {
 	return (
-		<div className="flex gap-3">
-			<button
-				onClick={() => handleAddFilter(setSearchFilters, filterData)}
-				className="p-3 border"
-			>
-				Add
+		<div className="flex gap-3 w-full">
+			<button onClick={onAddClick} className="p-3 border text-lg text-cyan-600">
+				{buttonText}
 			</button>
 		</div>
 	);

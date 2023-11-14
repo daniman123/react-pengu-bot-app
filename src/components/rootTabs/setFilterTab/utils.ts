@@ -1,4 +1,4 @@
-import { FilterData } from "./types";
+import { FilterData, Ifilters } from "./types";
 
 export const handleAddFilter = (
 	setSearchFilters: React.Dispatch<React.SetStateAction<string[]>>,

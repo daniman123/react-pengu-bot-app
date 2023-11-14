@@ -15,23 +15,31 @@ export interface IPriceInputFieldRanges {
 	children: React.ReactNode;
 }
 
+export interface FilterData {
+	cardTypes: CardTypes;
+	priceRange?: { min: number; max: number };
+}
+
 export interface ISetPriceRanges {
 	setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
 }
 
+export interface Ifilters {
+	[include: string]: string[];
+	[exclude: string]: string[];
+}
+
+export type setStateType = React.Dispatch<React.SetStateAction<string[]>>;
+
 export interface IFilterControlPanel {
-	setSearchFilters: React.Dispatch<React.SetStateAction<string[]>>;
-	filterData: FilterData;
+	onAddClick: () => void;
+	buttonText: string;
 }
 
 export interface IFilterListElement {
 	value: string;
-	setSearchFilters: React.Dispatch<React.SetStateAction<string[]>>;
-}
-
-export interface FilterData {
-	cardTypes: CardTypes;
-	priceRange?: { min: number; max: number };
+	setSearchFilters: setStateType;
+	handleClick: (value: string) => void;
 }
 
 export type CardTypes = {
@@ -42,3 +50,11 @@ export type CardTypes = {
 	nationality: string | null;
 	league: string | null;
 };
+
+export interface ILeftSegment {
+	setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
+}
+
+export interface IRightSegment {
+	filterData: FilterData;
+}
