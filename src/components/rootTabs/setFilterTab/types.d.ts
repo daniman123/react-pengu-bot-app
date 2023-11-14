@@ -1,60 +1,61 @@
 export interface IPriceRangeSection {
-	min: number;
-	max: number;
-	setMin: (value: number) => void;
-	setMax: (value: number) => void;
+  min: number;
+  max: number;
+  setMin: (value: number) => void;
+  setMax: (value: number) => void;
 }
 
 export interface IPriceInputField {
-	inputLabel: string;
-	onChange: (value: number) => void;
-	value: number;
+  inputLabel: string;
+  onChange: (value: number) => void;
+  value: number;
 }
 
 export interface IPriceInputFieldRanges {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export interface FilterData {
-	cardTypes: CardTypes;
-	priceRange?: { min: number; max: number };
+  cardTypes: CardTypes;
+  priceRange?: { min: number; max: number };
 }
 
 export interface ISetPriceRanges {
-	setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
+  setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
 }
 
 export interface Ifilters {
-	[include: string]: string[];
-	[exclude: string]: string[];
+  [include: string]: string[];
+  [exclude: string]: string[];
 }
 
 export type setStateType = React.Dispatch<React.SetStateAction<string[]>>;
 
 export interface IFilterControlPanel {
-	onAddClick: () => void;
-	buttonText: string;
+  onAddClick: () => void;
+  buttonText: string;
 }
 
 export interface IFilterListElement {
-	value: string;
-	setSearchFilters: setStateType;
-	handleClick: (value: string) => void;
+  value: string;
+  setSearchFilters: setStateType;
+  handleClick: (value: string) => void;
 }
 
 export type CardTypes = {
-	gender: string | null;
-	position: string | null;
-	rarity: string | null;
-	team: string | null;
-	nationality: string | null;
-	league: string | null;
+  gender: string | null;
+  position: string | null;
+  rarity: string | null;
+  team: string | null;
+  nationality: string | null;
+  league: string | null;
+  player: string | null;
 };
 
 export interface ILeftSegment {
-	setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
+  setFilterData: React.Dispatch<React.SetStateAction<FilterData>>;
 }
 
 export interface IRightSegment {
-	filterData: FilterData;
+  filterData: FilterData;
 }

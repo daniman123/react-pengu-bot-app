@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 def fetch(url):
     response = requests.get(url)
-    return response.json()
+    return response.json()["items"]
 
 def scrape_api(base_url, locale, limit, max_offset):
     total_requests = (max_offset // limit) + 1  # Calculate the total number of requests
