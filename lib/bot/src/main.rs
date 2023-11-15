@@ -102,6 +102,7 @@ async fn start_bot(rx: Arc<Mutex<Receiver<String>>>, users: &Users) {
                 }
                 _ => {
                     println!("Unknown command: {}", message);
+                    handle_unknown_message(&message, users, bot_active).await
                 }
             }
 
@@ -122,4 +123,17 @@ async fn start_bot(rx: Arc<Mutex<Receiver<String>>>, users: &Users) {
     }
 }
 
-
+// Updated function to handle unknown messages
+async fn handle_unknown_message(message: &str, users: &Users, bot_active: bool) {
+    if bot_active {
+        println!("Processing unknown message: {}", message);
+        // Implement your custom logic for unknown messages here
+        // This part will only execute when bot_active is true
+    } else {
+        // Optionally, handle the case when the bot is not active
+        println!(
+            "Ignoring unknown message because the bot is inactive: {}",
+            message
+        );
+    }
+}
