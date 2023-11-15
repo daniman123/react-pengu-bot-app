@@ -54,7 +54,7 @@ const RightSegment = ({ filterData }: IRightSegment) => {
 						onItemRemove={onItemRemove2}
 						isActive={excludePlayers}
 						exclude={setExcludePlayers}
-					/>
+					/> 
 				</div>
 			</div>
 		</div>

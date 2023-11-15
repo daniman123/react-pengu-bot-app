@@ -17,6 +17,7 @@ export const PriceInputField = ({
 				{inputLabel}
 			</label>
 			<input
+				id={inputLabel}
 				className="w-[60%] pt-1 indent-3 outline-none font-semibold text-lg"
 				type="number"
 				value={value}
