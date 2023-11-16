@@ -3,7 +3,7 @@
 	"name": "Pengu Pengu",
 	"version": "1.0",
 	"description": "Injects a React app into the webpage",
-	"permissions": ["activeTab", "storage","scripting"],
+	"permissions": ["activeTab", "storage", "scripting", "tabs"],
 	"host_permissions": ["http://*/*", "https://*/*"],
 	"content_scripts": [
 		{
