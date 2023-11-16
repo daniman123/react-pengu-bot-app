@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { FilterData } from "./types";
+
 export const useFilterData = () => {
     const [filterData, setFilterData] = useState<FilterData>({
     cardTypes: {
