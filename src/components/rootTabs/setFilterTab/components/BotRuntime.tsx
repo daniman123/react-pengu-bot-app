@@ -4,6 +4,45 @@ const BotRuntime = () => {
 	const [ws, setWs] = useState<WebSocket | null>(null);
 
 	useEffect(() => {
+		// const element = document.getElementById("APjFqb") as HTMLTextAreaElement;
+		document.addEventListener("DOMContentLoaded", () => {
+			const main = document.querySelector(
+				"button.ut-tab-bar-item.icon-leaderboards"
+			) as HTMLButtonElement;
+
+			main.addEventListener("click", () => {
+				const isTransferMarketOpen = document.querySelector(
+					"button.ut-tab-bar-item.icon-transfer.selected"
+				);
+
+				console.log(isTransferMarketOpen);
+				if (!isTransferMarketOpen) {
+					const pl = document.querySelector(
+						"button.ut-tab-bar-item.icon-transfer"
+					) as HTMLButtonElement;
+					pl?.click();
+				}
+				const isTransferMarketOpenCheck = document.querySelector(
+					"button.ut-tab-bar-item.icon-transfer.selected"
+				);
+
+				console.log(isTransferMarketOpenCheck);
+			});
+		});
+
+		// const inputListener = () => {
+		// 	console.log("listening for: ", element.value);
+		// };
+
+		// element?.addEventListener("input", inputListener);
+
+		// // Cleanup listener when the component unmounts
+		// return () => {
+		// 	element?.removeEventListener("input", inputListener);
+		// };
+	}, []);
+
+	useEffect(() => {
 		if (!ws) return;
 
 		const onMessage = (msg: MessageEvent) => {

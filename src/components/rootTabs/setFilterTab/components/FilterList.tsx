@@ -1,25 +1,18 @@
-import React from "react";
-import { FilterListElement } from "./FilterListElement";
-// import FilterListElement from "./FilterListElement";
+import { IFilterList } from "../types";
+import FilterListTitle from "./FilterListTitle";
+import RenderFilterListElements from "./RenderFilterListElements";
 
-const FilterList = ({ title, items, onItemRemove, isActive, exclude }: any) => {
+const FilterList = ({
+	title,
+	isActive,
+	exclude,
+	items,
+	stateSetter,
+}: IFilterList) => {
 	return (
 		<ul className="block relative max-w-[100%] max-h-full col-span-1">
-			<h4
-				className={`${
-					title === isActive ? "bg-green-500" : ""
-				} cursor-pointer flex items-center justify-center mb-4`}
-				onClick={() => exclude(title)}
-			>
-				{title}
-			</h4>
-			{items.map((value: any) => (
-				<FilterListElement
-					key={value}
-					value={value}
-					handleClick={() => onItemRemove(value)}
-				/>
-			))}
+			<FilterListTitle title={title} isActive={isActive} exclude={exclude} />
+			<RenderFilterListElements items={items} stateSetter={stateSetter} />
 		</ul>
 	);
 };
