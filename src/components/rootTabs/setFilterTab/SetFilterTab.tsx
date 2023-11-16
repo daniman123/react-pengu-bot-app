@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { FilterData } from "./types";
+import {useFilterData} from "./hooks.ts"
 import LeftSegment from "./components/LeftSegment";
 import RightSegment from "./components/RightSegment";
 
