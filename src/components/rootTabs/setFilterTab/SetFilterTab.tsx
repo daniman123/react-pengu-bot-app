@@ -4,18 +4,7 @@ import LeftSegment from "./components/LeftSegment";
 import RightSegment from "./components/RightSegment";
 
 const SetFilterTab = () => {
-  const [filterData, setFilterData] = useState<FilterData>({
-    cardTypes: {
-      rarity: "",
-      gender: "",
-      league: "",
-      nationality: "",
-      position: "",
-      team: "",
-      player: "",
-    },
-    priceRange: { max: 0, min: 0 },
-  });
+  const {filterData,setFilterData} = useFilterData()
 
   return (
     <div className="h-full w-full grid auto-cols-fr grid-flow-col gap-4">
