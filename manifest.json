@@ -3,18 +3,16 @@
 	"name": "Pengu Pengu",
 	"version": "1.0",
 	"description": "Injects a React app into the webpage",
-	"permissions": ["activeTab", "storage", "scripting", "tabs"],
+	"permissions": ["activeTab", "storage", "scripting", "tabs", "action"],
 	"host_permissions": ["http://*/*", "https://*/*"],
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["contentScript.js"]
-		}
-	],
+
 	"web_accessible_resources": [
 		{
 			"resources": ["build/static/js/*.js", "build/static/css/*.css"],
 			"matches": ["<all_urls>"]
 		}
-	]
+	],
+	"background": {
+		"service_worker": "background.js"
+	}
 }

@@ -1,0 +1,52 @@
+manigest.kson
+{
+	"manifest_version": 3,
+	"name": "Brow",
+	"version": "1.0",
+	"description": "Injects a React app into the webpage",
+	"permissions": ["activeTab", "storage", "scripting", "tabs", "action"],
+	"host_permissions": ["http://*/*", "https://*/*"],
+	"action": {
+		"default_title": "Click to show an alert"
+	},
+	"background": {
+		"service_worker": "background.js"
+	}
+}
+
+
+
+Background.js
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+	if (
+		tab.url &&
+		tab.url.includes(
+			"https://www.ea.com/ru-ru/ea-sports-fc/ultimate-team/web-app/"
+		)
+	) {
+		chrome.scripting.executeScript({
+			target: { tabId: tab.id },
+			files: ["contentScript.js"],
+		});
+	}
+});
+
+
+contentScript.js
+function simulateClick(element) {
+    ['mouseover', 'mousedown', 'mouseup', 'click'].forEach(eventType => {
+        element.dispatchEvent(new MouseEvent(eventType, { 
+            bubbles: true, 
+            cancelable: true, 
+            view: window 
+        }));
+    });
+}
+
+const main = document.querySelector("button.btn-standard.call-to-action");
+if (main) {
+    console.log('Button found:', main);
+    simulateClick(main);
+} else {
+    console.log('Button not found');
+}

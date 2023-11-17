@@ -5,7 +5,7 @@ const injectApp = () => {
 
 	const script = document.createElement("script");
 	// eslint-disable-next-line no-undef
-	script.src = chrome.runtime.getURL("build/static/js/main.5146bc9a.js");
+	script.src = chrome.runtime.getURL("build/static/js/main.7c8f3532.js");
 	script.onload = () => script.remove();
 	(document.head || document.documentElement).appendChild(script);
 };
