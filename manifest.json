@@ -1,18 +1,27 @@
 {
-	"manifest_version": 3,
-	"name": "Pengu Pengu",
-	"version": "1.0",
-	"description": "Injects a React app into the webpage",
-	"permissions": ["activeTab", "storage", "scripting", "tabs", "action"],
-	"host_permissions": ["http://*/*", "https://*/*"],
-
-	"web_accessible_resources": [
-		{
-			"resources": ["build/static/js/*.js", "build/static/css/*.css"],
-			"matches": ["<all_urls>"]
-		}
-	],
-	"background": {
-		"service_worker": "background.js"
-	}
+  "manifest_version": 3,
+  "name": "Pengu Pengu",
+  "version": "1.0",
+  "description": "Injects a React app into the webpage",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs",
+    "action",
+    "runtime"
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["build/static/js/*.js", "build/static/css/*.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_title": "Click to show an alert"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
 }
