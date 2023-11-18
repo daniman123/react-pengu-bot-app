@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const contentScriptPath = 'contentScript.js';
+const contentScriptPath = 'contentScripts/injectReactApp.js';
 let contentScript = fs.readFileSync(contentScriptPath, 'utf8');
 
 // Regex patterns to match the file names
